@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using IIFE Function</title>
+</head>
+<body>
+    <script>
+
+        (function(x)                                                                   //IIFE Odd
+        {  
+            let odd=x.filter((element)=>element%2!==0)
+            console.log("Odd Numbers")
+            console.log(...odd)   
+        })([1,2,3,4,5,6,7,8,9,10]);
+
+
+        (function(x)                                                                   //IIFE Sum
+        {
+            var sum2=0;
+            for(var i=0;i<x.length;i++){
+                sum2+=x[i]
+            }
+            console.log("Sum of Numbers :")
+            console.log(sum2)    
+        })([1,2,3,4,5,6,7,8,9,10]);
+
+
+        (function(upper)                                                               //IIFE Str to Caps
+        {  
+            var res=[]
+            for(var i=0;i<upper.length;i++){
+                res.push(upper[i].toUpperCase())
+            }
+            console.log("String to Caps :")
+            console.log(...res)
+        })(["jose","kishore","jeni"]);
+
+
+        (function(numArray)                                                            //IIFE Prime Number
+        {
+            numArray = numArray.filter((number) => {
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) return false;
+            }
+            return true;
+            });
+            console.log("Prime Numbers :")
+            console.log(...numArray)
+        })([2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]);    
+
+
+        (function(arr)                                                               //IIFE Palindrome
+        {
+            var palresult=[]
+            for(let i=0;i<arr.length;i++)
+            {
+                var arrayvalues = arr[i].split("")
+                var revarray = arrayvalues.reverse()
+                var revstring = revarray.join("")
+                    if(arr[i] === revstring)
+                    {
+                        palresult.push(arr[i])
+                    }
+            }
+            console.log("Palindrome :")
+            console.log(...palresult)
+        })(["madam","jose","wow","jeni","civic","level","hello","deed"]);
+
+
+        (function(arr)                                                               //IIFE Remove Deplicates
+        {
+            let unique_name = [...new Set(arr)];
+            // Printing the unique names
+            console.log("Remove Duplicates :")
+            console.log(...unique_name);
+        })(["jose","arun","kathir","jose","vinoth","kishore","kathir"]); 
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Arrow Function</title>
+</head>
+<body>
+    <script>
+
+        //Print odd numbers
+        var arr=[1,2,3,4,5,6,7,8,9,10]    
+
+        var oddarrow = (x) => {                                           
+        let odd=x.filter((element)=>element%2!==0)
+        console.log("Odd Number :")
+        console.log(...odd)
+        }
+        oddarrow(arr)
+
+        
+        //Sum of all numbers in array
+        var arr2=[1,2,3,4,5,6,7,8,9,10]
+        var sum=0;                                                                            
+        var sumarrow = (x) => {
+            for(var i=0;i<x.length;i++){
+                sum+=x[i]
+            }
+            console.log("Sum of Numbers :")
+            console.log(sum)
+        }
+        sumarrow(arr2)
+
+        //Convert String to Caps
+        var arr3=["jose","kishore","jeni"]                                              
+        var res=[]
+        var capsarrow = (upper) => {
+            for(var i=0;i<upper.length;i++){
+                res.push(upper[i].toUpperCase())
+            }
+        }
+        capsarrow(arr3)
+        console.log("String to Caps :")
+        console.log(...res)
+
+        //Find Prime numbers in an array
+        var numArray = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+
+        var primearrow = (numArray) => {                                      
+            numArray = numArray.filter((number) => {
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) return false;
+            }
+            return true;
+            });
+            console.log("Prime Numbers :")
+            console.log(...numArray)
+        }
+        primearrow(numArray)
+
+        
+        //Check Palindrome in an array
+        var arrpal=["madam","jose","wow","jeni","civic","level","hello","deed"]
+        var palresult=[]
+        var palarrow = (arr) => {                                               
+            for(let i=0;i<arr.length;i++)
+            {
+                var arrayvalues = arr[i].split("")
+                var revarray = arrayvalues.reverse()
+                var revstring = revarray.join("")
+                    if(arr[i] === revstring)
+                    {
+                        palresult.push(arr[i])
+                    }
+            } 
+        }
+        palarrow(arrpal)
+        console.log("Palindrome :")
+        console.log(...palresult)
+
+        
+        //Remove Duplicates from an array
+        var arrduplicate=["jose","arun","kathir","jose","vinoth","kishore","kathir"]
+        var duplicatearrow = (arr) => {
+        let unique_name = [...new Set(arr)];
+        // Printing the unique names
+        console.log("Remove Duplicates :")
+        console.log(...unique_name);
+        }
+        duplicatearrow(arrduplicate)
+
+    </script>
+</body>
+</html>
